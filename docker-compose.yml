@@ -13,7 +13,7 @@ services:
     volumes:
       - n8n_data:/home/node/.n8n
       # Mount your videos directory as needed
-      # - ./AffiliateMemeVids:/videos/AffiliateMemeVids
+      - ./public:/videos/AffiliateMemeVids
 
   remotion:
     build:
