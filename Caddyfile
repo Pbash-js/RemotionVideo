@@ -1,0 +1,3 @@
+remotion.pragmatixstudio.com {
+    reverse_proxy remotion:5679
+}
