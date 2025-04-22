@@ -22,7 +22,7 @@ app.post('/render', async (req, res) => {
 
     await renderMedia({
       serveUrl,
-      composition: comp.id,
+      composition: comp,
       inputProps,
       codec: 'h264',
       outputLocation,

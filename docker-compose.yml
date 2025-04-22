@@ -2,7 +2,9 @@ version: '3'
 
 services:
   n8n:
-    image: n8nio/n8n:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.n8n
     restart: always
     ports:
       - "5678:5678"
@@ -14,6 +16,7 @@ services:
       - n8n_data:/home/node/.n8n
       # Mount your videos directory as needed
       - ./public:/videos/AffiliateMemeVids
+      - shared_volume:/app/output
 
   remotion:
     build:
@@ -22,8 +25,10 @@ services:
       - "3000:3000"
     volumes:
       - .:/app
+      - shared_volume:/app/output
     environment:
       - NODE_ENV=production
 
 volumes:
   n8n_data:
+  shared_volume:
