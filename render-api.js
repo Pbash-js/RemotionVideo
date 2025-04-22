@@ -8,7 +8,7 @@ app.use(express.json());
 app.post('/render', async (req, res) => {
   try {
     const { composition, inputProps, outputName } = req.body;
-    const serveUrl = 'file://' + path.resolve('./build'); // points to Remotion project root
+    const serveUrl = path.resolve('./build'); // points to Remotion project root
     const outputLocation = path.resolve('./output', outputName || 'video.mp4');
 
     // Fetch available compositions to validate
